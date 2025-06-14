@@ -5,7 +5,7 @@ from google_sheets import send_to_sheet
 from filter import is_safe_message, extract_info
 
 logging.basicConfig(level=logging.INFO)
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN_HERE"
+BOT_TOKEN = "7586526524:AAEcET6XF4gLsS9LcUXSMX42o89o0c9B7LE"
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
