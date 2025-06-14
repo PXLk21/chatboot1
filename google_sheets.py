@@ -22,9 +22,9 @@ def send_to_sheet(data):
 
     row = [
         data.get("نوع العقار", ""),
-        data.get("المدينة", ""),
+        data.get("الموقع", ""),
         data.get("السعر", ""),
-        data.get("جهة التواصل", ""),
+        data.get("التواصل", ""),
         data.get("رابط الإعلان", ""),
     ]
     sheet.append_row(row)
