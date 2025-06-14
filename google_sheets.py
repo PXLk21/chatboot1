@@ -8,7 +8,7 @@ CREDS_FILE = "credentials.json"
 def send_to_sheet(data):
     creds = ServiceAccountCredentials.from_json_keyfile_name(CREDS_FILE, SCOPES)
     client = gspread.authorize(creds)
-    sheet = client.open(SPREADSHEET_NAME).sheet1
+    sheet = client.open_by_key(1Pig1Kvp47szTIkdhh1vE82YjfjPE0isA).sheet1
 
     row = [
         data["نوع العقار"],
