@@ -20,7 +20,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         send_to_sheet(data)
         await update.message.reply_text("✅ تم استلام إعلانك العقاري بنجاح.")
     else:
-        await update.message.reply_text("⚠️ يرجى التأكد من تنسيق الرسالة.")
+        await update.message.reply_text("⚠️ يرجى التأكد من رقم رخصة فال.")
         await context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
 
 
