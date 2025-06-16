@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "BOT_TOKEN": "env",
+    },
+    "startCommand": "python bot.py"
+  }
+}
