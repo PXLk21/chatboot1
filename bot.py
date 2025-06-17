@@ -36,7 +36,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data:
         send_to_sheet(data)
     else:
-        await update.message.reply_text("⚠️  يرجى التأكد من رقم رخصة فال او اكتب (طلب) في رسالت اعلانك.")
+        await update.message.reply_text("⚠️ يرجى التأكد من كتابة رقم رخصة فال، أو اكتب (طلب) في رسالة طلبك.")
         await context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
 
 
