@@ -22,7 +22,6 @@ def extract_info(text):
         "رابط الإعلان": ""
     }
 
-    # استخراج البيانات من التنسيق
     for line in lines:
         if ":" in line:
             key, value = line.split(":", 1)
@@ -33,8 +32,15 @@ def extract_info(text):
             elif key == "رابط الموقع":
                 data["رابط الإعلان"] = value
 
-    # التحقق من وجود رقم مكون من 10 خانات يبدأ بـ 12 (مثال: 12xxxxxxxx)
-    if re.search(r"\b12\d{8}\b", text):
+    # الشرط الجديد:
+    # إذا في رقم فال → نسمح
+    # أو إذا في الكلمة "طلب" → نسمح
+    has_fal_number = re.search(r"\b12\d{8}\b", text)
+    has_request_word = "طلب" in text
+
+    if has_fal_number or has_request_word:
         return data
+
     return None
+
 
