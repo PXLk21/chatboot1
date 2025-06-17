@@ -29,16 +29,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
 
     if not is_safe_message(text):
-        await update.message.reply_text("🚫 هذا الإعلان غير مسموح به.")
         await context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
         return
 
     data = extract_info(text)
     if data:
         send_to_sheet(data)
-        await update.message.reply_text("✅ تم استلام إعلانك العقاري بنجاح.")
     else:
-        await update.message.reply_text("⚠️ يرجى التأكد من رقم رخصة فال.")
+        await update.message.reply_text("⚠️  يرجى التأكد من رقم رخصة فال او اكتب (طلب) في رسالت اعلانك.")
         await context.bot.delete_message(chat_id=update.message.chat_id, message_id=update.message.message_id)
 
 
